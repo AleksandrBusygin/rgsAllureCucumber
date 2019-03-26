@@ -36,10 +36,10 @@ public class ScenarioPage extends BaseSteps {
     @When("^выбрано количество дней в сумме, палнируемых для нахождения за рубежом:\"(.+)\"$")
     public void selectCountryOfDaysStep(String countOfDays){ calculationPage.chooseCountOfDays(countOfDays); }
 
-    @When("^поле ввода имени заполнено значением\"(.+)\"$")
+    @When("^поле ввода имени заполнено значением \"(.+)\"$")
     public void selectNameStep(String name) throws InterruptedException { calculationPage.selectName(name); }
 
-    @When("^поле ввода даты рождения заполнено значением\"(.+)\"$")
+    @When("^поле ввода даты рождения заполнено значением \"(.+)\"$")
     public void selectBirthDateStep(String date) throws InterruptedException { calculationPage.selectBirthDate(date); }
 
     @When("^выбрана усуга \"Активный отдых или спорт\" активной(true): \"(.+)\"$")
