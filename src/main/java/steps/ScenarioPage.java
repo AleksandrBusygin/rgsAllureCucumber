@@ -42,36 +42,20 @@ public class ScenarioPage extends BaseSteps {
     @When("^поле ввода даты рождения заполнено значением\"(.+)\"$")
     public void selectBirthDateStep(String date) throws InterruptedException { calculationPage.selectBirthDate(date); }
 
-//    @When("^выбрана усуга \"Активный отдых или спорт\" активной(true): \"(.+)\"$")
-//    @Step("Выбираем услугу \"Активный отдых или спорт\" активной(true): {0}")
-//    public void selectRelaxOptionStep(boolean a){
-//        calculationPage.chooseRelaxOption(a);
-//    }
-//    @Step("Даем согласие на обработку своих персональных данных")
-//    public void consentStep(){
-//        calculationPage.consent();
-//    }
-//    @Step("Нажимаем кнопку расчета")
-//    public void calculationStep(){
-//        calculationPage.calculation();
-//    }
+    @When("^выбрана усуга \"Активный отдых или спорт\" активной(true): \"(.+)\"$")
+    public void selectRelaxOptionStep(boolean a){ calculationPage.chooseRelaxOption(a); }
 
+    @When("^дано согласие на обработку персональных данных$")
+    public void consentStep(){ calculationPage.consent(); }
 
+    @When("^нажата кнопка расчета$")
+    public void calculationStep(){ calculationPage.calculation();}
 
-    // mainPage.chooseService("Путешествия");
-//        individualsPage.chooseWorldPart("Страхование выезжающих за рубеж");
-//        onlinePage.selectPayment();
-//        calculationPage.compareHeader();
-//        calculationPage.chooseCountOfTrips();
-//        calculationPage.chooseCountry(countryName);
-//        calculationPage.setDepartureDate();
-//        calculationPage.chooseCountOfDays("Не более 90 дней");
-//        calculationPage.selectName("PUTIN VLADIMIR");
-//        calculationPage.selectBirthDate("07.10.1952");
-//        calculationPage.chooseRelaxOption(true);
-//        calculationPage.consent();
-//        calculationPage.calculation();
-//        finalPage.compareFinalResults("Многократные поездки в течение года","Шенген","PUTIN VLADIMIR","07.10.1952","(включая активный отдых)");
-//}
+    @Then("^переход на страницу с итоговыми данными и ценой страховки$")
+    public void waitingForFinalPageStep(){ finalPage.waitingForFinalPage();}
+
+    @Then("^сравниваем полученные данные с теми, что вводили на странице заполнения данных:\"(.+)\",\"(.+)\",\"(.+)\",\"(.+)\",\"(.+)\"$")
+    public void compareFinalResultsPage(String reasonOfInsurance, String partOfWorldToVisit, String fullName, String dateOfBirth, String activeSportOption)
+    {  finalPage.compareFinalResults(reasonOfInsurance, partOfWorldToVisit, fullName, dateOfBirth, activeSportOption); }
 
 }

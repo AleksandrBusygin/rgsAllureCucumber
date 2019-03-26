@@ -1,10 +1,13 @@
 package util;
 
+import io.qameta.allure.cucumberjvm.AllureCucumberJvm;
+import gherkin.formatter.model.Result;
 import io.qameta.allure.Allure;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import static util.Init.getDriver;
 
-
-public class AllureReporter extends ru.yandex.qameta.allure.cucumberjvm.AllureReporter{
+public class AllureReporter extends AllureCucumberJvm{
 
     @Override
     public void result(Result result) {
