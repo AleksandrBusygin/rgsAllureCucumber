@@ -1,5 +1,7 @@
+/*
 package util;
 
+import io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm;
 import io.qameta.allure.cucumberjvm.AllureCucumberJvm;
 import gherkin.formatter.model.Result;
 import io.qameta.allure.Allure;
@@ -9,7 +11,9 @@ import steps.BaseSteps;
 
 import static util.Init.getDriver;
 
-public class AllureReporter extends AllureCucumberJvm{
+public class AllureReporter extends AllureCucumber4Jvm{
+
+
 
     @Override
     public void result(Result result) {
@@ -20,3 +24,4 @@ public class AllureReporter extends AllureCucumberJvm{
 
 
 }
+*/

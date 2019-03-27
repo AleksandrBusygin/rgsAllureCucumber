@@ -27,8 +27,9 @@ public class BaseSteps {
     protected FinalPage finalPage;
     protected String countryName;
 
-    @Before
+    @Before("@web")
     public void startScenario() {
+        Properties properties = TestProperties.getInstance().getProperties();
         switch (properties.getProperty("browser2")) {
             case "firefox":
                 System.setProperty("webdriver.gecko.driver", properties.getProperty("webdriver.gecko.driver"));
@@ -56,7 +57,7 @@ public class BaseSteps {
         countryName = "Испания";
     }
 
-    @After
+    @After("@web")
     public void close(){
         Init.getDriver().close();
     }
