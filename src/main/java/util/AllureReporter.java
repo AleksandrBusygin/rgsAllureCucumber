@@ -8,12 +8,9 @@ import io.qameta.allure.Allure;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import steps.BaseSteps;
-
 import static util.Init.getDriver;
 
 public class AllureReporter extends AllureCucumber4Jvm{
-
-
 
     @Override
     public void result(Result result) {

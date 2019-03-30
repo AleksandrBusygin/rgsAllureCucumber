@@ -75,11 +75,11 @@ public class CalculationPage extends BasePageObject {
     @FindBy(xpath = "//div[contains(@data-bind,'activeRestOrSportsToggle')]/div[contains(@class, 'toggle-rgs')]")
     WebElement activeRelax;
 
-    public void chooseRelaxOption(boolean ad){
-        if(ad == true){
+    public void chooseRelaxOption(String ad){
+        if(ad.equals("Да")){
             checkBoxCheck(activeRelax);
         }
-        if (ad == false) {
+        if (ad.equals("Нет")) {
             checkBoxUnCheck(activeRelax);
         }
     }

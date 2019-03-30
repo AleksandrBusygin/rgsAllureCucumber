@@ -29,22 +29,20 @@ public class CalculationPageSteps {
     public void selectCountryOfDaysStep(String countOfDays){
         CalculationPage calculationPage = new CalculationPage();
         calculationPage.chooseCountOfDays(countOfDays);
-//        Не более 90 дней
     }
     @Step("Заполняем поле ввода данных именем: {0}")
     public void selectNameStep(String name) throws InterruptedException {
         CalculationPage calculationPage = new CalculationPage();
         calculationPage.selectName(name);
-//        "PUTIN VLADIMIR"
     }
     @Step("Заполняем поле ввода данных датой рождения: {0}")
     public void selectBirthDateStep(String date) throws InterruptedException {
         CalculationPage calculationPage = new CalculationPage();
         calculationPage.selectBirthDate(date);
-//        "PUTIN VLADIMIR"
+
     }
     @Step("Выбираем услугу \"Активный отдых или спорт\" активной(true): {0}")
-    public void selectRelaxOptionStep(boolean a){
+    public void selectRelaxOptionStep(String a){
         CalculationPage calculationPage = new CalculationPage();
         calculationPage.chooseRelaxOption(a);
     }

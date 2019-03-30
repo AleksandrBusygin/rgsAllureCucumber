@@ -25,11 +25,9 @@ public class BaseSteps {
     protected OnlinePage onlinePage;
     protected CalculationPage calculationPage;
     protected FinalPage finalPage;
-    protected String countryName;
 
-    @Before("@web")
+    @Before
     public void startScenario() {
-        Properties properties = TestProperties.getInstance().getProperties();
         switch (properties.getProperty("browser2")) {
             case "firefox":
                 System.setProperty("webdriver.gecko.driver", properties.getProperty("webdriver.gecko.driver"));
@@ -54,10 +52,9 @@ public class BaseSteps {
         onlinePage = new OnlinePage();
         calculationPage = new CalculationPage();
         finalPage = new FinalPage();
-        countryName = "Испания";
     }
 
-    @After("@web")
+    @After
     public void close(){
         Init.getDriver().close();
     }
